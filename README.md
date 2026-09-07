@@ -3,6 +3,17 @@
 ## Overzicht
 Ik werk alleen aan deze opdracht.
 
+## Wireframes
+
+### Blog Home
+![Blog Home wireframe](Wireframes/Blog%20Home.png)
+
+### Blogs Page
+![Blogs Page wireframe](Wireframes/Blogs%20Page.png)
+
+### Post Page
+![Post Page wireframe](Wireframes/post%20page.png)
+
 ## Ondersteunde content
 - Tekst
 - Foto's
