@@ -22,16 +22,27 @@ Ik werk alleen aan deze opdracht.
 ## Database
 
 - **Author**: naam (verplicht)
-- **PostId**: id (verplicht)
+- **PostIds**: ids (verplicht)
+
+```
+Users:                                  
+    12345:                              
+        Author: John Johnathan          
+        PostIds: [12345, 12346, 12347]  
+    12346:                              
+        Author: Paul Martinez           
+        PostIds: [12341, 12342, 12343]  
+```
 
 ## Posts: database ontwerp
 
 Voorbeeld van de database:
 
 ```
-PostId12:
-    Timestamp: [timestamp]    # automatisch gegenereerd, verplicht
-    Title: [text]             # verplicht
-    Content: [text]           # verplicht
-    image: [imgurl]        # verplicht
+PostId12345:
+    PostId: [id]                # automatisch gegenereerd, verplicht
+    Timestamp: [timestamp]      # automatisch gegenereerd, verplicht
+    Title: [text]               # verplicht                         
+    Content: [text]             # verplicht                         
+    image: [imgurl]             # verplicht                         
 ```
