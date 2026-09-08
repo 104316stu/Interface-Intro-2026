@@ -1,0 +1,1 @@
+# blog page of a singular blog

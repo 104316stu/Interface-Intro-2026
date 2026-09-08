@@ -1,0 +1,1 @@
+# a more list view of all the blogs

@@ -1,23 +1,42 @@
 <?php
 
+require 'Data/GetData.php';
+
+// main post most recent
+function timetodate($timestamp) {
+    $current = time();
+    $timeDifference = $current - $timestamp;
+    if ($timeDifference < 60) {
+        return $timeDifference . ' seconden geleden';
+    } elseif ($timeDifference < 3600) {
+        return floor($timeDifference / 60) . ' minuten geleden';
+    } elseif ($timeDifference < 86400) {
+        return floor($timeDifference / 3600) . ' uren geleden';
+    } else {
+        return floor($timeDifference / 86400) . ' dagen geleden';
+    }
+}
+
+
 $post = [
-    'title'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque congue sapien.',
-    'author' => 'John Johnathan',
-    'date'   => '24th Aug 2023',
-    'image'  => 'Uploads/testimage.webp',
-    'body'   => [
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque congue sapien.
-        Morbi rhoncus mollis erat ac molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque congue sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque congue sapien.',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque congue sapien.',
-    ],
+    'id'     => (int)$postData['Post_id'],
+    'title'  => $postData['Title'],
+    'author' => $postData['Username'],
+    'date'   => timetodate($postData['Timestamp']),
+    'image'  => $postData['image'],
+    'body'   => explode("\n", $postData['Body'] ?? ''),
 ];
 
-$sidebar = [
-    ['title' => 'Lorem ipsum dolor...', 'image' => 'Uploads/testimage.webp'],
-    ['title' => 'Lorem ipsum dolor...', 'image' => 'Uploads/testimage.webp'],
-    ['title' => 'Lorem ipsum dolor...', 'image' => 'Uploads/testimage.webp'],
-    ['title' => 'Lorem ipsum dolor...', 'image' => 'Uploads/testimage.webp'],
-];
+// sidebar
+$sidebar = [];
+foreach ($allPosts as $row) {
+    if ((int)$row['Post_id'] !== $post['id']) {
+        $sidebar[] = [
+            'id'    => $row['Post_id'],
+            'title' => $row['Title'],
+            'image' => $row['image'],
+        ];
+    }
+}
 
 include 'index_view.php';
