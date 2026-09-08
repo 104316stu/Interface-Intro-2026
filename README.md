@@ -3,6 +3,37 @@
 ## Overzicht
 Ik werk alleen aan deze opdracht.
 
+## Plan dag 1 - 7 september 2026
+
+Achteraf opgeschreven vanuit Git. Ik maak een blog met tekst en foto's van het museum.
+
+- Wireframes maken voor home, blogs en een post plaatsen.
+- README en databaseontwerp maken.
+- Mappen en PHP-bestanden klaarzetten.
+
+Daarna de homepage bouwen en verbinden met SQLite.
+
+## Museumbezoek - 8 september 2026
+
+De drie foto's staan in [photos](photos/). Je ziet een oude telefooncentrale met veel bedrading en onderdelen. Rechts staan twee telefoons met een draaischijf. Bovenaan hangt een schema van de verbinding. De laatste foto is van wat dichterbij. Deze foto's kan ik gebruiken voor een blogpost over het bezoek.
+
+We waren ongeveer 90% van de tijd met de gids aan het praten, vooral waar de foto's zijn genomen. Hij vertelde hoe hij bij het museum terecht was gekomen en dat hij een keer naar Dublin was geweest voor een van die telefoons. Daar had hij een aardig stel ontmoet dat steeds voor eten zorgde. We bleven zo lang doorpraten dat de opdracht een beetje naar de achtergrond ging en ik eigenlijk vergat om meer foto's te maken. Daarom heb ik maar drie foto's van dezelfde plek.
+
+## Fundering
+
+Ik gebruik PHP, CSS en SQLite. De homepage haalt posts uit de database en laat tekst, een foto en de auteur zien. Het formulier voor een nieuwe post staat er ook al. Opslaan, het blogoverzicht en de losse blogpagina moeten nog af.
+
+## Logboek
+
+Alles zelf gedaan
+
+8 september 2026:
+
+- Homepage met CSS en SQLite-database toegevoegd.
+- Posts ophalen uit de database aan de homepage gekoppeld.
+- Verder: eerste postformulier en museumfoto's staan in de werkmap.
+- Plan, Nog de postpage afmaken 
+
 ## Wireframes
 
 ### Blog Home
@@ -20,6 +51,8 @@ Ik werk alleen aan deze opdracht.
 - Tijdstip (timestamp)
 
 ## Database
+
+Dit is het eerste databaseontwerp.
 
 - **Author**: naam (verplicht)
 - **PostIds**: ids (verplicht)
