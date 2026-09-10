@@ -53,7 +53,7 @@
         <img src="../Uploads/testimage.webp" alt="" class="preview-image">
 
         <!-- dit zijn de echte velden, ze zien er alleen uit als de post -->
-        <input class="title-input" type="text" name="title" placeholder="Titel van je post" maxlength="70" required>
+        <input id="input-title" class="title-input" type="text" name="title" placeholder="Titel van je post" maxlength="70" required>
         <textarea class="body-input" name="body" placeholder="Schrijf hier je post... elke witregel wordt een alinea" required></textarea>
     </main>
 </form>

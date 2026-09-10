@@ -4,8 +4,15 @@ require 'Data/GetData.php';
 
 // main post most recent
 function timetodate($timestamp) {
+    // database slaat UTC op als tekst, hier weer een getal van maken
+    $posted = strtotime($timestamp . ' UTC');
+
+    if (!$posted) {
+        return $timestamp;
+    }
+
     $current = time();
-    $timeDifference = $current - $timestamp;
+    $timeDifference = $current - $posted;
     if ($timeDifference < 60) {
         return $timeDifference . ' seconden geleden';
     } elseif ($timeDifference < 3600) {
