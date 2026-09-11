@@ -28,8 +28,10 @@
 
     <aside>
         <?php foreach ($sidebar as $item): ?>
-            <img src="<?= $item['image'] ?>" alt="">
-            <p><?= $item['title'] ?></p>
+            <a href="pages/blogpage.php?id=<?= $item['id'] ?>">
+                <img src="<?= $item['image'] ?>" alt="">
+                <p><?= $item['title'] ?></p>
+            </a>
         <?php endforeach; ?>
     </aside>
 </div>

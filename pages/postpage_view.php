@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="nl">
-    <head>
-        <meta charset="utf-8">
-        <title>Blog - Post</title>
-        <link rel="stylesheet" href="../css/postpage.css">
-        <script src="../scripts/postpage.js" defer></script>
-    </head>
+<head>
+<meta charset="utf-8">
+<title>Blog - Post</title>
+<link rel="stylesheet" href="../css/postpage.css">
+<script src="../scripts/postpage.js" defer></script>
+</head>
 <body>
 
 <header>
@@ -17,12 +17,11 @@
     </nav>
 </header>
 
-<!-- enctype is nodig, anders komt het bestand niet mee -->
 <form class="layout" action="../Data/SendData.php" method="post" enctype="multipart/form-data">
     <aside>
         <label for="image">Main Image:</label>
         <div class="upload">
-            <img src="../Uploads/testimage.webp" alt="" class="preview-image">
+            <img alt="" class="preview-image">
             <input type="file" id="image" name="image" accept="image/*" required>
         </div>
 
@@ -31,17 +30,17 @@
 
         <p class="hints-title">Hints:</p>
         <ul class="hints">
-            <li>
+            <li id="hint-title">
                 <strong>Page Has a title.</strong>
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                <span>Geef je post een titel</span>
             </li>
-            <li>
+            <li id="hint-length">
                 <strong>Title is less than 70 chars.</strong>
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                <span>0 / 70 tekens</span>
             </li>
-            <li>
+            <li id="hint-image">
                 <strong>Image</strong>
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                <span>Kies een afbeelding</span>
             </li>
         </ul>
 
@@ -50,11 +49,10 @@
 
     <main>
         <p class="preview-title">Preview:</p>
-        <img src="../Uploads/testimage.webp" alt="" class="preview-image">
+        <img alt="" class="preview-image">
 
-        <!-- dit zijn de echte velden, ze zien er alleen uit als de post -->
         <input id="input-title" class="title-input" type="text" name="title" placeholder="Titel van je post" maxlength="70" required>
-        <textarea class="body-input" name="body" placeholder="Schrijf hier je post... elke witregel wordt een alinea" required></textarea>
+        <textarea class="body-input" name="body" placeholder="Schrijf hier je post..." required></textarea>
     </main>
 </form>
 

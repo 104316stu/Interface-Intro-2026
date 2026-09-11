@@ -6,7 +6,6 @@ $db = new SQLite3(__DIR__ . '/Posts.sqlite');
 
 if ($id) {
     // prepared query voor injections
-    // specifieke post pakken van de database
     $preparedQuery = $db->prepare(
         'SELECT Posts.*, Users.Username
          FROM Posts
@@ -14,15 +13,11 @@ if ($id) {
          WHERE Post_id = :id'
     );
 
-    $preparedQuery->bindValue(
-        ':id',
-        (int)$id,
-        SQLITE3_INTEGER
-    );
+    $preparedQuery->bindValue(':id', (int)$id, SQLITE3_INTEGER);
 
     $queryResult = $preparedQuery->execute();
 } else {
-    // geen id? dan pakt hij gewoon de nieuwste post
+    // geen id? dan de nieuwste
     $queryResult = $db->query(
         'SELECT Posts.*, Users.Username
          FROM Posts
@@ -32,17 +27,41 @@ if ($id) {
     );
 }
 
-// de post die groot op de pagina komt
 $postData = $queryResult->fetchArray(SQLITE3_ASSOC);
 
 if (!$postData) {
     exit('Geen post gevonden.');
 }
 
-// alles pakken voor de sidebar, gesorteerd op id
-$result = $db->query('SELECT Post_id, Title, image FROM Posts ORDER BY Post_id DESC');
+$result = $db->query(
+    'SELECT Posts.Post_id, Posts.Title, Posts.image, Posts.Timestamp, Users.Username
+     FROM Posts
+     JOIN Users ON Users.User_id = Posts.User_id
+     ORDER BY Post_id DESC'
+);
 
 $allPosts = [];
 while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
     $allPosts[] = $row;
+}
+
+function timetodate($timestamp) {
+    // database slaat UTC op als tekst
+    $posted = strtotime($timestamp . ' UTC');
+
+    if (!$posted) {
+        return $timestamp;
+    }
+
+    $timeDifference = time() - $posted;
+
+    if ($timeDifference < 60) {
+        return $timeDifference . ' seconden geleden';
+    } elseif ($timeDifference < 3600) {
+        return floor($timeDifference / 60) . ' minuten geleden';
+    } elseif ($timeDifference < 86400) {
+        return floor($timeDifference / 3600) . ' uren geleden';
+    } else {
+        return floor($timeDifference / 86400) . ' dagen geleden';
+    }
 }

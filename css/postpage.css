@@ -1,88 +1,85 @@
-body { 
-    margin: 0; 
-    background: #ccc; 
-    font-family: sans-serif; 
+body {
+    margin: 0;
+    background: #ccc;
+    font-family: sans-serif;
 }
 
-header { 
-    background: #ddd; 
-    padding: 10px 20px; 
-    display: flex; 
-    align-items: center; 
+header {
+    background: #ddd;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
 }
 
-header h1 { 
-    margin: 0; 
-    font-weight: normal; 
+header h1 {
+    margin: 0;
+    font-weight: normal;
 }
 
-nav { 
-    margin: 0 auto; 
+nav {
+    margin: 0 auto;
 }
 
-nav a { 
-    background: #999; 
-    color: #fff; 
-    padding: 8px 16px; 
-    text-decoration: none; 
+nav a {
+    background: #999;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
 }
 
-nav a.active { 
-    background: #555; 
+nav a.active {
+    background: #555;
 }
 
-.layout { 
-    display: flex; 
-    gap: 20px; 
-    padding: 20px; 
-    align-items: flex-start; 
+.layout {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    align-items: flex-start;
 }
 
-/* hier is de aside juist smal en de main breed */
-aside { 
-    flex: 1; 
-    min-width: 0; 
-    background: #fff; 
-    padding: 20px; 
+aside {
+    flex: 1;
+    min-width: 0;
+    background: #fff;
+    padding: 20px;
 }
 
-main { 
-    flex: 3; 
-    min-width: 0; 
-    background: #fff; 
-    padding: 20px; 
+main {
+    flex: 3;
+    min-width: 0;
+    background: #fff;
+    padding: 20px;
 }
 
-/* linkerkant: het formulier */
-label { 
-    display: block; 
-    margin-bottom: 5px; 
+label {
+    display: block;
+    margin-bottom: 5px;
 }
 
-.upload { 
-    display: flex; 
-    align-items: center; 
-    gap: 15px; 
-    margin-bottom: 20px; 
+.upload {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-.upload img { 
-    width: 120px; 
-    height: 70px; 
-    object-fit: cover; 
-    display: block; 
+.upload img {
+    width: 120px;
+    height: 70px;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
 }
 
-/* alleen het knopje van de file input stylen, 
-   de bestandsnaam blijft er zo naast staan */
-.upload input[type="file"]::file-selector-button { 
-    background: #e0e0e0; 
-    border: none; 
-    border-radius: 20px; 
-    padding: 8px 20px; 
-    margin-right: 10px; 
-    font-family: inherit; 
-    cursor: pointer; 
+.upload input[type="file"]::file-selector-button {
+    background: #e0e0e0;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    margin-right: 10px;
+    font-family: inherit;
+    cursor: pointer;
 }
 
 #image {
@@ -93,109 +90,113 @@ label {
   color: #000000;
 }
 
-
-.upload input[type="file"]::file-selector-button:hover { 
-    background: #d0d0d0; 
+.upload input[type="file"]::file-selector-button:hover {
+    background: #d0d0d0;
 }
 
-.upload input[type="file"]::file-selector-button:active { 
-    background: #bdbdbd; 
+.upload input[type="file"]::file-selector-button:active {
+    background: #bdbdbd;
 }
 
-input, textarea, button { 
-    font-family: inherit; 
-    font-size: inherit; 
+input, textarea, button {
+    font-family: inherit;
+    font-size: inherit;
 }
 
-aside input[type="text"] { 
-    width: 100%; 
-    box-sizing: border-box; 
-    background: #e0e0e0; 
-    border: none; 
-    padding: 10px; 
-    margin-bottom: 25px; 
+aside input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    background: #e0e0e0;
+    border: none;
+    padding: 10px;
+    margin-bottom: 25px;
 }
 
-.hints { 
-    list-style: none; 
-    padding: 0; 
+.hints {
+    list-style: none;
+    padding: 0;
 }
 
-.hints li { 
-    margin-bottom: 15px; 
+.hints li {
+    margin-bottom: 15px;
 }
 
-/* het groene vinkje voor elke hint */
-.hints li::before { 
-    content: "\2713"; 
-    display: inline-block; 
-    width: 18px; 
-    height: 18px; 
-    line-height: 18px; 
-    text-align: center; 
-    background: #4caf50; 
-    color: #fff; 
-    border-radius: 50%; 
-    margin-right: 8px; 
-    font-size: 12px; 
+.hints li::before {
+    content: "\2713";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    background: #bbb;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 8px;
+    font-size: 12px;
 }
 
-.hints span { 
-    display: block; 
-    margin-left: 26px; 
+.hints span {
+    display: block;
+    margin-left: 26px;
 }
 
-/* rechterkant: de preview */
-.preview-title { 
-    margin-top: 0; 
-    font-weight: bold; 
+.preview-title {
+    margin-top: 0;
+    font-weight: bold;
 }
 
-main img { 
-    width: 100%; 
-    height: 55vh; 
-    object-fit: cover; 
-    display: block; 
+main img {
+    width: 100%;
+    height: 55vh;
+    object-fit: cover;
+    display: block;
 }
 
-.date { 
-    color: #555; 
+.date {
+    color: #555;
 }
 
-.post-button { 
-    background: #555; 
-    color: #fff; 
-    border: none; 
-    border-radius: 20px; 
-    padding: 10px 25px; 
-    cursor: pointer; 
+.post-button {
+    background: #555;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 25px;
+    cursor: pointer;
 }
 
-.post-button:hover { 
-    background: #333; 
+.post-button:hover {
+    background: #333;
 }
 
-.post-button:active { 
-    background: #000; 
+.post-button:active {
+    background: #000;
 }
 
-/* de velden in de preview zien eruit als gewone tekst */
-.title-input { 
-    width: 100%; 
-    box-sizing: border-box; 
-    border: none; 
-    padding: 0; 
-    margin: 15px 0 5px; 
-    font-size: 1.5em; 
-    font-weight: bold; 
+.title-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    padding: 0;
+    margin: 15px 0 5px;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
-.body-input { 
-    width: 100%; 
-    box-sizing: border-box; 
-    border: none; 
-    padding: 0; 
-    margin-top: 15px; 
-    min-height: 200px; 
-    resize: vertical; 
+.body-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    padding: 0;
+    margin-top: 15px;
+    min-height: 200px;
+    resize: vertical;
+}
+
+.hints li.done::before {
+    background: #4caf50;
+}
+
+.preview-image {
+    background: #ccc;
 }
